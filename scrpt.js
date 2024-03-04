@@ -29,14 +29,14 @@ function scrollDown() {
   itemsCollection[counterImg].classList.remove("hide");
 };
 
-// Handler per scorrere verso il basso
-down.addEventListener('click', function() {
-  itemsCollection[counterImg].classList.add("hide"); // Nascondo l'immagine corrente
-  counterImg++; // Incremento l'indice per muovermi verso il basso
-  if (counterImg >= images.length) {
-    counterImg = 0; // Se supero il limite inferiore, torno al primo elemento
-  }
-  itemsCollection[counterImg].classList.remove("hide"); // Mostro la nuova immagine
-});
+function startAutoScroll() {
+  autoScroll = setInterval(scrollDown, 3000);
+}
 
-console.log(counterImg, images);
+function stopAutoScroll() {
+  clearInterval(autoScroll);
+}
+
+// Inizia lo scorrimento automatico
+startAutoScroll();
+
