@@ -3,6 +3,7 @@ const up = document.querySelector(".up");
 const down = document.querySelector(".down");
 
 let counterImg = 0;
+let autoScroll;
 
 // Costante array immagini
 const images = [
@@ -20,26 +21,20 @@ for (let i = 0; i < images.length; i++) {
 }
 
 const itemsCollection = document.getElementsByClassName("img");
-
-
 itemsCollection[counterImg].classList.remove("hide");
 
-
-up.addEventListener('click', function() {
-  itemsCollection[counterImg].classList.add("hide"); 
-  counterImg--; 
-  if (counterImg < 0) {
-    counterImg = images.length - 1; 
-  }
-  itemsCollection[counterImg].classList.remove("hide"); 
-});
+function scrollDown() {
+  itemsCollection[counterImg].classList.add("hide"); // Nascondo l'immagine corrente
+  counterImg = (counterImg + 1) % images.length; 
+  itemsCollection[counterImg].classList.remove("hide");
+};
 
 // Handler per scorrere verso il basso
 down.addEventListener('click', function() {
-  itemsCollection[counterImg].classList.add("hide"); 
-  counterImg++; 
+  itemsCollection[counterImg].classList.add("hide"); // Nascondo l'immagine corrente
+  counterImg++; // Incremento l'indice per muovermi verso il basso
   if (counterImg >= images.length) {
-    counterImg = 0; 
+    counterImg = 0; // Se supero il limite inferiore, torno al primo elemento
   }
   itemsCollection[counterImg].classList.remove("hide"); // Mostro la nuova immagine
 });
