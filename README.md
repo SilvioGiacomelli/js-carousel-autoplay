@@ -1,10 +1,10 @@
-js-array-carousel
+js-array-autoplay
 ===
 **Consegna:**
-Dato un array contenente una lista di cinque immagini, creare un carosello come nello screenshot allegato.
-
-Possibile flusso
+Riprendendo il carousel realizzato in passato  e con le Timeng Function rendete lo scroll automatico ogni 3 secondi.
+Attenzione: dopo l’ultima slide deve riapparire la prima e così via
 ===
-1. Creo un html inserendo le immagini e le classi
-2. Do i valori su css
-3. Inserisco le immagini come costante
+Possibile flusso
+1. Abilito lo scorrimento delle immagini togliendo la rimozione del tasto sopra e sotto nelle rispettive immagini di fine corsa 
+2. Imposto un setInterval di 3000 millisecondi sullo scorrimento inferiore
+3. 
